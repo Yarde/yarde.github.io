@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1366 height=768></canvas>
+      <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -23,11 +23,6 @@
         <div id="unity-build-title">Labirynth</div>
       </div>
     </div>
-	<div id-"form">
-		<button type="button">
-			<a href="https://forms.gle/Uq4spo1D81nwj6Cw5">Feedback Form</a>	
-		</button>
-	</div>
     <script>
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -87,9 +82,10 @@
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
-        canvas.style.width = "1366px";
-        canvas.style.height = "768px";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
+      canvas.style.background = "url('" + buildUrl + "/LabirynthBuilds.jpg') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -109,17 +105,4 @@
       document.body.appendChild(script);
     </script>
   </body>
-  <style>
-    .button {
-      background: #be2df7;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: white;
-      font-family: "Roboto", sans-serif;
-      position: fixed;
-      bottom: -3px;
-      right: 0;
-    }
-  </style>
 </html>
